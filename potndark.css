@@ -142,3 +142,7 @@ div.goup {
 .AMASS_new_and_unseen table tbody tr td div, .AMASS_new_and_unseen table+div {
     color: #DDDDDD !important;
 }
+
+.post_container.selected {
+    background-color: limegreen !important;
+}
