@@ -1,0 +1,39 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "POTN Customizer",
+  "version": "0.1",
+
+  // Recommended
+//  "default_locale": "en",
+  "description": "Chrome Extension to customize POTN display and behavior.",
+  //  "icons": {...},
+
+  // Pick one (or none)
+//  "browser_action": {...},
+//  "page_action": {...},
+
+  // Optional
+//  "automation": ...,
+//  "background": {
+//    // Recommended
+//    "persistent": false
+//  },
+//  "chrome_ui_overrides": {
+//    "bookmarks_ui": {
+//      "remove_bookmark_shortcut": true,
+//      "remove_button": true
+//    }
+//  },
+  "content_scripts": [ {
+        "matches": ["http://photography-on-the.net/*"],
+        "css": ["potndark.css"],
+        "js": ["potnfixes.js"],
+        "run_at": "document_end"
+    }
+  ],
+  "devtools_page": "devtools.html",
+  "offline_enabled": true,
+  "permissions": ["tabs"],
+  "short_name": "POTN Customizer"
+}
