@@ -28,7 +28,7 @@
   "content_scripts": [ {
         "matches": ["http://photography-on-the.net/*"],
         "css": ["potndark.css"],
-        "js": ["jquery-1.11.2.min.js", "potnfixes.js"],
+        "js": ["jquery-1.11.2.min.js", "keypress.js", "potnfixes.js"],
         "run_at": "document_end"
     }
   ],
