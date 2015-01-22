@@ -10,3 +10,9 @@ Usage:
 * Click Select/Open
 
 You should now have an Extension named 'POTN Customizer 0.1' listed.  Open http://photography-on-the.net/forum/ and enjoy!
+
+
+Keyboard Shortcuts:
+* j/k to navigate through posts within a page
+* n/p to navigate through pages within a thread
+

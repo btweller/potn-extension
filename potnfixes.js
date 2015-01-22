@@ -1,5 +1,21 @@
 $(document).keypress(function( event ) {
     switch (event.which) {
+        case 78: // N
+        case 110: // n
+            var nextPages = $('.pag_top.navigation .currentpage').nextAll('.otherpage');
+            if (nextPages.length > 0) {
+                var nextPage = nextPages.first()[0];
+                nextPage.click();
+            }
+            break;
+        case 80: // P
+        case 112: // p
+            var prevPages = $('.pag_top.navigation .currentpage').prevAll('.otherpage');
+            if (prevPages.length > 0) {
+                var prevPage = prevPages.first()[0];
+                prevPage.click();
+            }
+            break;
         case 74: // J
         case 106: // j
 //            console.log('next');
@@ -14,8 +30,12 @@ $(document).keypress(function( event ) {
                 var nextPost = currentPost.nextAll('.post_container');
                 if (nextPost.length == 0) {
                     // Nothing to do here...you're at the end of the list.
-                    // TODO:  Maybe look for the next PAGE and navigate to that?
-//                    console.log('No more posts...');
+                    // Look for the next PAGE and navigate to that?
+//                    var nextPages = $('.pag_top.navigation .currentpage').nextAll('.otherpage');
+//                    if (nextPages.length > 0) {
+//                        var nextPage = nextPages.first()[0];
+//                        nextPage.click();
+//                    }
                 }
                 else {
                     currentPost.toggleClass('selected', false);
@@ -35,8 +55,12 @@ $(document).keypress(function( event ) {
                 var prevPost = currentPost.prevAll('.post_container');
                 if (prevPost.length == 0) {
                     // Nothing to do here...you're at the end of the list.
-                    // TODO:  Maybe look for the previous PAGE and navigate to that?
-//                    console.log('No more posts...');
+                    // Look for the previous PAGE and navigate to that?
+//                    var prevPages = $('.pag_top.navigation .currentpage').prevAll('.otherpage');
+//                    if (prevPages.length > 0) {
+//                        var prevPage = prevPages.first()[0];
+//                        prevPage.click();
+//                    }
                 }
                 else {
                     currentPost.toggleClass('selected', false);
