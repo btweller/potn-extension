@@ -1,17 +1,24 @@
-body {
+body.dark {
     background-color: #444444 !important;
     color: #DDDDDD !important;
     background-image: none !important;
 }
 
-a.main_link:link, a.main_link:visited {
+body.dark * a.main_link:link,
+body.dark * a.main_link:visited {
     color: #FFFFFF !important;
 }
 
-#notification_area > span > a.no_notifications:link, #notification_area > span > a.no_notifications:visited {
+body.dark > #notification_area > span > a.no_notifications:link,
+body.dark > #notification_area > span > a.no_notifications:visited,
+body.dark * a.AMASS_notification_status.no_notifications:link,
+body.dark * a.AMASS_notification_status.no_notifications:visited
+{
     color: #000 !important;
 }
-#notification_area > a:link, #notification_area > a:visited {
+
+body.dark > #notification_area > a:link,
+body.dark > #notification_area > a:visited {
     color: #FFFFFF !important;
 }
 
@@ -19,134 +26,180 @@ a.main_link:link, a.main_link:visited {
     /*color: #000000 !important;*/
 /*}*/
 
-.threadlist {
+body.dark * .threadlist {
     background-color: #888888 !important;
 }
 
-.threadtd {
+body.dark * .threadtd {
     background-color: #999999 !important;
 }
-.lastreply {
+body.dark * .lastreply {
     background-color: #777777 !important;
 }
 
-a:visited {
+body.dark * a:visited {
     color: #888888 !important;
 }
-a:link {
+body.dark * a:link {
     color: #EEEEEE !important;
 }
 
-#header_jenna, #header_jenna + br + div {
-    color: #EEEEEE !important;
-}
-
-th {
+body.dark > .AMASS_css_header_large {
     color: #FFFFFF !important;
 }
 
-.render_information, .render_information div {
+body.dark * h2,
+body.dark * h2 + br + div,
+body.dark * #header_jenna,
+body.dark * #header_jenna + br + div
+{
+    color: #EEEEEE !important;
+}
+
+body.dark * th {
+    color: #FFFFFF !important;
+}
+
+body.dark > .render_information,
+body.dark * .render_information,
+body.dark > .render_information div,
+body.dark * .render_information div
+{
     color: #f3f3f3 !important;
 }
 
-.otherpage, a.otherpage:link, a.otherpage:visited, .otherpage_inwide, a.otherpage_inwide:link, a.otherpage_inwide:visited {
+body.dark * .otherpage,
+body.dark * a.otherpage:link,
+body.dark * a.otherpage:visited,
+body.dark * .otherpage_inwide,
+body.dark * a.otherpage_inwide:link,
+body.dark * a.otherpage_inwide:visited {
     background-color: #333333;
 }
 
-.currentpage, a.currentpage:link, a.currentpage:visited {
+body.dark * .currentpage,
+body.dark * a.currentpage:link,
+body.dark * a.currentpage:visited {
     background-color: #888888 !important;
     color: #ffffff !important;
 }
 
 
-.threadtitle {
+body.dark > .threadtitle {
     color: #EEEEEE;
 }
 
-.threadlist_title a:link {
+body.dark * .thread_command_color {
+    color: #6891CC !important;
+}
+
+body.dark * .threadlist_title a:link {
     color: #EEEEEE !important;
 }
-.threadlist_title a:visited {
+body.dark * .threadlist_title a:visited {
     color: #555555 !important;
 }
 
-.thread_startdate {
+body.dark * .inforumcount {
+    color: #666666 !important;
+}
+body.dark * .forumdescription {
+    color: #333333 !important;
+}
+
+body.dark * .thread_startdate {
     color: #FFFFFF !important;
 }
 
-.post_table {
+body.dark * .post_table {
     background-color: #777777 !important;
 }
 
-.ducker {
+body.dark * .ducker {
     background-color: #666666 !important;
 }
 
-.markItUpPreviewFrame {
+body.dark * .markItUpPreviewFrame {
     padding: inherit !important;
 }
 
-#postpreview {
+body.dark * #postpreview {
     background-color: #444444 !important;
 }
 
-.posttext, .posttime, .post_signature {
+body.dark * .posttext,
+body.dark * .posttime,
+body.dark * .post_signature {
     color: #eeeeee !important;
 }
-.like {
+body.dark > .like {
     color: #dddddd !important;
 }
-td.member, div.userinfo {
+body.dark * td.member,
+body.dark * div.userinfo {
     background-color: #555555 !important;
 }
 
-.membertitle, .joined_location, .moreinfo {
+body.dark * .membertitle,
+body.dark * .joined_location,
+body.dark * .moreinfo {
     color: #ffffff !important;
 }
 
 
-.bbcode_quote_body {
+body.dark * .bbcode_quote_body {
     background-color: #999999 !important;
 }
 
-#followed_ui {
+body.dark * #followed_ui {
     color: #FFFFFF !important;
 }
 
 /* Disable the sidebar 'go to top' navigation */
-div.goup {
+body.dark > div.goup {
     display: none;
 }
 
 /* search */
-.resultdiv {
+body.dark * .resultdiv {
     background-color: #BDBDBD !important;
     background-image: none !important;
 }
 
-.AMASS_searchresult_tp a:link, .AMASS_searchresult_tp a:visited {
+body.dark * .AMASS_searchresult_tp a:link,
+body.dark * .AMASS_searchresult_tp a:visited {
     color: #000 !important;
 
 }
-.AMASS_searchresult_b, .AMASS_searchresult_b a:link, .AMASS_searchresult_b a:visited, .AMASS_searchresult_b+a:link, .AMASS_searchresult_b+a:visited {
+body.dark * .AMASS_searchresult_b,
+body.dark * .AMASS_searchresult_b a:link,
+body.dark * .AMASS_searchresult_b a:visited,
+body.dark * .AMASS_searchresult_b+a:link,
+body.dark * .AMASS_searchresult_b+a:visited {
     color: #333 !important;
 }
 
-#searchfilters a:link, #searchfilters a:visited, .search_info a:link, .search_info a:visited {
+body.dark * #searchfilters a:link,
+body.dark * #searchfilters a:visited,
+body.dark * .search_info a:link,
+body.dark * .search_info a:visited {
     color: #000000 !important;
 }
 
-.AMASS_new_and_unseen, .AMASS_unseenlists {
+body.dark * .AMASS_new_and_unseen,
+body.dark * .AMASS_unseenlists {
     background-color: #888 !important;
 }
-.AMASS_new_and_unseen table tbody tr td div, .AMASS_new_and_unseen table+div {
+body.dark * .AMASS_new_and_unseen table tbody tr td div,
+body.dark * .AMASS_new_and_unseen table+div {
     color: #DDDDDD !important;
 }
 
-.post_container.selected {
+body.dark * .post_container.selected {
     background-color: limegreen !important;
 }
 
-.threadrow.selected .threadtd {
+body.dark * .threadrow.selected .threadtd {
     background-color: limegreen !important;
 }
+

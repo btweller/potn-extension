@@ -89,6 +89,18 @@ keylistener.register_many([
  */
 
 keylistener.register_combo({
+    keys: "t d",
+    is_sequence: true,
+    is_exclusive: true,
+    on_release: function() {
+        var enabled = cbool(localStorage.getItem('potn_extension_enabled'), true);
+        localStorage.setItem('potn_extension_enabled', !enabled);
+        $('body').toggleClass('dark', !enabled);
+    }
+});
+
+
+keylistener.register_combo({
     keys: "g t",
     is_sequence: true,
     is_exclusive: true,
@@ -305,7 +317,7 @@ function openSelectedThread() {
         return;
     }
 
-    var currentThreadLink = currentThread.children('.threadtd').children('.threadlist_title').children('a');
+    var currentThreadLink = currentThread.find('.threadlist_title a');
 
     if (currentThreadLink.length > 0) {
         currentThreadLink.first()[0].click();
@@ -594,6 +606,16 @@ function gotoPreviousPost() {
 //    }
 //});
 
+function cbool(value, defaultValue) {
+    if (value == undefined) {
+        return defaultValue;
+    }
+    switch(value.toLowerCase()){
+		case "true": case "yes": case "1": return true;
+		case "false": case "no": case "0": case null: return false;
+		default: return defaultValue;
+	}
+}
 
 $(document).ready(function() {
     window.setTimeout(function() {
@@ -610,4 +632,10 @@ $(document).ready(function() {
     }, 500);
 });
 
+//debugger;
+var isEnabled = cbool(localStorage.getItem('potn_extension_enabled'), true);
+
 console.log('potnfixes.js loaded.');
+if (isEnabled) {
+    $('body').toggleClass('dark');
+}
