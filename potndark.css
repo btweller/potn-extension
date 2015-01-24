@@ -195,7 +195,7 @@ body.dark * .AMASS_new_and_unseen table+div {
     color: #DDDDDD !important;
 }
 
-body.dark * .post_container.selected {
+body.dark > .post_container.selected {
     background-color: limegreen !important;
 }
 
