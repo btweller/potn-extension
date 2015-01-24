@@ -13,6 +13,11 @@ You should now have an Extension named 'POTN Customizer 0.1' listed.  Open http:
 
 
 Keyboard Shortcuts:
-* j/k to navigate through posts within a page
-* n/p to navigate through pages within a thread
-
+* g+h to navigate to the Homepage.
+* g+n to navigate to New Posts.
+* g+f to navigate to Followed+Own.
+* g+t to open/close the Notifications dialog.
+* j/k to navigate through Forums on the homepage, Threads within a Forum, and Posts within a Thread.
+* n/p to navigate through pages within a Forum or Thread.
+* o to open the currently selected Forum or Thread.
+* t+d to toggle on/off the dark CSS theme.

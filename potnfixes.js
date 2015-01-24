@@ -1,93 +1,5 @@
 var keylistener = new window.keypress.Listener();
 
-/*
-keylistener.register_many([
-    {
-        keys: "n",
-        is_exclusive: true,
-        is_solitary: true,
-        on_keydown: function() {
-            // goto New Posts
-            console.log('n pressed');
-        }
-    },
-    {
-        keys: "p",
-        is_exclusive: true,
-        is_solitary: true,
-        on_keydown: function() {
-            // goto New Posts
-            console.log('p pressed');
-        }
-    },
-    {
-        keys: "g n p",
-        is_sequence: true,
-        is_exclusive: true,
-        on_release: function() {
-            // goto New Posts
-            console.log('g, n, p pressed');
-        }
-    },
-    {
-        keys: "g i",
-        is_sequence: true,
-        is_exclusive: true,
-        on_release: function() {
-            // goto New Posts
-            console.log('g, i pressed');
-        }
-    },
-    {
-        keys: "g q",
-//        is_sequence: true,
-        is_exclusive: true,
-        on_release: function() {
-            // goto New Posts
-            console.log('g, q pressed');
-        }
-    },
-    {
-        keys: "g w",
-        is_sequence: true,
-        is_exclusive: true,
-        on_release: function() {
-            // goto New Posts
-            console.log('g, w pressed');
-        }
-    },
-    {
-        keys: "g e",
-        is_sequence: true,
-        is_exclusive: true,
-        on_release: function() {
-            // goto New Posts
-            console.log('g, e pressed');
-        }
-    },
-    {
-        keys: "g r",
-        is_sequence: true,
-        is_exclusive: true,
-        on_release: function() {
-            // goto New Posts
-            console.log('g, r pressed');
-        }
-    }
-]);
-*/
-
-
-/*
-    TODO:
-        Need to add thread-level navigation (or make the n/p, j/k navigation keys smart enough to differentiate based on
-        what the currently loaded page is and navigate accordingly.
-
-        Add a help screen (Shift + ?) to display an overlay with a listing of the keyboard shortcuts (ala GMail).
-
-
- */
-
 keylistener.register_combo({
     keys: "t d",
     is_sequence: true,
@@ -98,7 +10,6 @@ keylistener.register_combo({
         $('body').toggleClass('dark', !enabled);
     }
 });
-
 
 keylistener.register_combo({
     keys: "g t",
