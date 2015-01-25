@@ -9,6 +9,18 @@ body.dark * a.main_link:visited {
     color: #FFFFFF !important;
 }
 
+body.dark * .short_pagination a:link,
+body.dark * .short_pagination a:visited,
+body.dark * .unread_forumview a:link,
+body.dark * .unread_forumview a:visited
+{
+    color: #EEEEEE !important;
+}
+
+body.dark * .username_nobold span {
+    color: #DDDDDD !important;
+}
+
 body.dark > #notification_area > span > a.no_notifications:link,
 body.dark > #notification_area > span > a.no_notifications:visited,
 body.dark * a.AMASS_notification_status.no_notifications:link,
@@ -138,6 +150,15 @@ body.dark > .like {
 body.dark * td.member,
 body.dark * div.userinfo {
     background-color: #555555 !important;
+    color: #EEEEEE !important;
+}
+
+body.dark * .userdetails {
+    color: #EEEEEE !important;
+}
+
+body.dark * .permalink_light {
+    color: #EEEEEE !important;
 }
 
 body.dark * .membertitle,
@@ -196,10 +217,16 @@ body.dark * .AMASS_new_and_unseen table+div {
 }
 
 body.dark > .post_container.selected {
-    background-color: limegreen !important;
+    background-color: #66aa66 !important;
 }
 
 body.dark * .threadrow.selected .threadtd {
-    background-color: limegreen !important;
+    /*background-color: #9bcc5f !important;*/
+    /*background-color: #66aa66 !important;*/
+    background-color: #AAAAAA !important;
 }
 
+
+body.dark * .AMASS_href.external {
+    color: yellow !important;
+}
