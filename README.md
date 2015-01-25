@@ -20,4 +20,5 @@ Keyboard Shortcuts:
 * j/k to navigate through Forums on the homepage, Threads within a Forum, and Posts within a Thread.
 * n/p to navigate through pages within a Forum or Thread.
 * o to open the currently selected Forum or Thread.
+* shift+o to open the currently selected Forum or Thread in a new browser tab.
 * t+d to toggle on/off the dark CSS theme.

@@ -1,5 +1,11 @@
 var keylistener = new window.keypress.Listener();
 
+
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    console.log(message);
+});
+
+
 keylistener.register_combo({
     keys: "t d",
     is_sequence: true,
@@ -138,18 +144,44 @@ keylistener.register_combo({
 
 
 keylistener.register_combo({
-    keys: "o",
+    keys: "shift o",
     is_exclusive: true,
     is_solitary: true,
+    is_sequence: false,
     on_keydown: function() {
+        console.log('shift+o pressed');
         switch (getPage()) {
             case "Homepage":
-                openSelectedForum();
+                openSelectedForum(true);
                 break;
             case "Forum":
             case "New":
             case "Followed":
-                openSelectedThread();
+                openSelectedThread(true);
+                break;
+            case "Thread":
+                break;
+            case "Notifications":
+                break;
+        }
+
+    }
+});
+
+keylistener.register_combo({
+    keys: "o",
+    is_exclusive: false,
+    is_solitary: true,
+    on_keydown: function() {
+        console.log('o pressed');
+        switch (getPage()) {
+            case "Homepage":
+                openSelectedForum(false);
+                break;
+            case "Forum":
+            case "New":
+            case "Followed":
+                openSelectedThread(false);
                 break;
             case "Thread":
                 break;
@@ -218,11 +250,15 @@ function openNotifications() {
     }
 }
 
-function openSelectedForum() {
-    openSelectedThread();
+function openSelectedForum(newWindow) {
+    openSelectedThread(newWindow);
 }
 
-function openSelectedThread() {
+function openSelectedThread(newWindow) {
+    if (newWindow == undefined) {
+        newWindow = false;
+    }
+
     var currentThread = $('.threadrow.selected');
     if (currentThread.length == 0) {
         return;
@@ -231,7 +267,13 @@ function openSelectedThread() {
     var currentThreadLink = currentThread.find('.threadlist_title a');
 
     if (currentThreadLink.length > 0) {
-        currentThreadLink.first()[0].click();
+        if (newWindow) {
+            var linkUrl = currentThreadLink.first().attr('href');
+            chrome.runtime.sendMessage({url: linkUrl});
+        }
+        else {
+            currentThreadLink.first()[0].click();
+        }
     }
 }
 

@@ -32,6 +32,10 @@
         "run_at": "document_end"
     }
   ],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
   "devtools_page": "devtools.html",
   "offline_enabled": true,
   "permissions": ["tabs"],
