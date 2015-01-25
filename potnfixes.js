@@ -11,6 +11,9 @@ keylistener.register_combo({
     is_sequence: true,
     is_exclusive: true,
     on_release: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         var enabled = cbool(localStorage.getItem('potn_extension_enabled'), true);
         localStorage.setItem('potn_extension_enabled', !enabled);
         $('body').toggleClass('dark', !enabled);
@@ -22,6 +25,9 @@ keylistener.register_combo({
     is_sequence: true,
     is_exclusive: true,
     on_release: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         openNotifications();
     }
 });
@@ -31,6 +37,9 @@ keylistener.register_combo({
     is_sequence: true,
     is_exclusive: true,
     on_release: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         gotoFollowedPosts();
     }
 });
@@ -40,6 +49,9 @@ keylistener.register_combo({
     is_sequence: true,
     is_exclusive: true,
     on_release: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         gotoNewPosts();
     }
 });
@@ -49,6 +61,9 @@ keylistener.register_combo({
     is_sequence: true,
     is_exclusive: true,
     on_release: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         gotoHome();
     }
 });
@@ -58,6 +73,9 @@ keylistener.register_combo({
     is_exclusive: true,
     is_solitary: true,
     on_keydown: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         switch (getPage()) {
             case "Homepage":
                 gotoNextForum();
@@ -81,6 +99,9 @@ keylistener.register_combo({
     is_exclusive: true,
     is_solitary: true,
     on_keydown: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         switch (getPage()) {
             case "Homepage":
                 gotoPreviousForum();
@@ -105,6 +126,9 @@ keylistener.register_combo({
     is_exclusive: true,
     is_solitary: true,
     on_keydown: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         switch (getPage()) {
             case "Homepage":
                 gotoNextForumGroup();
@@ -126,6 +150,9 @@ keylistener.register_combo({
     is_exclusive: true,
     is_solitary: true,
     on_keydown: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         switch (getPage()) {
             case "Homepage":
                 gotoPreviousForumGroup();
@@ -142,14 +169,15 @@ keylistener.register_combo({
     }
 });
 
-
 keylistener.register_combo({
     keys: "meta o",
     is_exclusive: true,
     is_solitary: true,
     is_sequence: false,
     on_keydown: function() {
-        console.log('shift+o pressed');
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         switch (getPage()) {
             case "Homepage":
                 openSelectedForum(true);
@@ -164,7 +192,6 @@ keylistener.register_combo({
             case "Notifications":
                 break;
         }
-
     }
 });
 
@@ -173,7 +200,9 @@ keylistener.register_combo({
     is_exclusive: false,
     is_solitary: true,
     on_keydown: function() {
-        console.log('o pressed');
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
         switch (getPage()) {
             case "Homepage":
                 openSelectedForum(false);
@@ -188,11 +217,13 @@ keylistener.register_combo({
             case "Notifications":
                 break;
         }
-
     }
 });
 
-
+function shouldProcessKeystrokes(){
+    var isInputElementActive = $(document.activeElement).is('input') || $(document.activeElement).is('textarea');
+    return !isInputElementActive;
+}
 
 function getPage() {
     var pageUrl = document.location.href;
