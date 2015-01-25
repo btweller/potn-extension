@@ -49,6 +49,22 @@ body.dark * .lastreply {
     background-color: #777777 !important;
 }
 
+body.dark * .thread_has_new,
+body.dark * .thread_is_read
+{
+    color: #036 !important;
+}
+
+
+body.dark * .threadlist_title a:link span {
+    color: #036 !important;
+}
+body.dark * .threadlist_title a:visited span {
+    color: #036 !important;
+}
+
+
+
 body.dark * a:visited {
     color: #888888 !important;
 }
@@ -105,18 +121,11 @@ body.dark * .thread_command_color {
     color: #6891CC !important;
 }
 
-body.dark * .threadlist_title a:link {
-    color: #EEEEEE !important;
-}
-body.dark * .threadlist_title a:visited {
-    color: #555555 !important;
-}
-
 body.dark * .inforumcount {
-    color: #666666 !important;
+    color: #DDDDDD !important;
 }
 body.dark * .forumdescription {
-    color: #333333 !important;
+    color: #DDDDDD !important;
 }
 
 body.dark * .thread_startdate {

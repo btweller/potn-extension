@@ -220,6 +220,26 @@ keylistener.register_combo({
     }
 });
 
+keylistener.register_combo({
+    keys: "s",
+    is_exclusive: false,
+    is_solitary: true,
+    on_keydown: function() {
+        if (!shouldProcessKeystrokes()) {
+            return true;
+        }
+
+        var closeButton = $('.cibus_close');
+        if (closeButton.length > 0) {
+            closeButton.click();
+        }
+        else {
+            $('.search').first()[0].click()
+        }
+    }
+});
+
+
 function shouldProcessKeystrokes(){
     var isInputElementActive = $(document.activeElement).is('input') || $(document.activeElement).is('textarea');
     return !isInputElementActive;
