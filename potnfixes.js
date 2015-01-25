@@ -144,7 +144,7 @@ keylistener.register_combo({
 
 
 keylistener.register_combo({
-    keys: "shift o",
+    keys: "meta o",
     is_exclusive: true,
     is_solitary: true,
     is_sequence: false,
